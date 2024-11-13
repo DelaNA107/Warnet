@@ -42,6 +42,7 @@
                             </div>
                             <a href="contact.html" class="nav-item nav-link">Intan</a>
                             <a href="contact.html" class="nav-item nav-link">Feby</a>
+                            <a href="contact.html" class="nav-item nav-link">Riri</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
                             <a href="" class="nav-item nav-link">Login</a>
