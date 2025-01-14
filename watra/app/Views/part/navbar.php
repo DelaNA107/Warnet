@@ -45,8 +45,15 @@
                             <a href="contact.html" class="nav-item nav-link">Riri</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="" class="nav-item nav-link">Login</a>
-                            <a href="" class="nav-item nav-link">Register</a>
+                            <?php
+                            if (session()->get('username') == ''){
+                                echo "<a href='/login' class='nav-item nav-link'>Login</a>";
+                                echo "<a href='' class='nav-item nav-link'>Register</a>";
+                            }else{
+                                echo "<a href='#' class='nav-item nav-link'>Halo, ".session()->get('username')."</a>";
+                                echo "<a href='login/logout' class='nav-item nav-link'>[ Logout ]</a>";
+                            }
+                            ?>
                         </div>
                     </div>
                 </nav>

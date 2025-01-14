@@ -31,6 +31,9 @@
               </p>
             </a>
           </li>
+          <?php
+          if (session()->get('hak_akses') == 'admiin') {
+          ?>
           <li class="nav-item">
           <a href="kategori" class="nav-link">
              <i class="nav-icon fas fa-th"></i>
@@ -39,6 +42,17 @@
               </p>
           </a>
         </li>
+        <?php
+            }
+          ?>
+        <li class="nav-item">
+          <a href="login/logout" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              Log Out
+            </p>
+          </a>
+        <li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
