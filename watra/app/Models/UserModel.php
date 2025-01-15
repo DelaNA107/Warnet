@@ -13,10 +13,9 @@ class UserModel extends Model
     protected $allowedFields = ['username','password','hak_akses'];
 
     public function get_data($username, $password)
-    {
-        return $this->db->table('tbl_user')
-        ->where(array('username' => $username, 'password' => md5($password)))
-        ->get()->getRowArray();
+        {
+           return $this->db->table('tbl_user')
+           ->where(array('username' => $username, 'password' => md5($password)))
+           ->get()->getRowArray();
+        }
     }
-
-}

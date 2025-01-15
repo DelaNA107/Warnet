@@ -32,27 +32,27 @@
             </a>
           </li>
           <?php
-          if (session()->get('hak_akses') == 'admiin') {
+              if (session()->get('hak_akses') == 'admin') {
           ?>
           <li class="nav-item">
-          <a href="kategori" class="nav-link">
-             <i class="nav-icon fas fa-th"></i>
-              <p>
-                Kategori
-              </p>
-          </a>
-        </li>
-        <?php
-            }
+            <a href="<?= base_url('/kategori'); ?>" class="nav-link">
+                 <i class="nav-icon fas fa-th"></i>
+                 <p>
+                      Kategori
+                 </p>
+            </a>
+          </li>
+          <li class="nav-item">
+                    <a href="<?= base_url('/barang'); ?>" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Barang
+                        </p>
+                    </a>
+                </li>
+          <?php
+              }
           ?>
-        <li class="nav-item">
-          <a href="login/logout" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-              Log Out
-            </p>
-          </a>
-        <li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

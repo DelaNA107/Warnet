@@ -53,7 +53,7 @@
                                 echo "<a href='#' class='nav-item nav-link'>Halo, ".session()->get('username')."</a>";
                                 echo "<a href='login/logout' class='nav-item nav-link'>[ Logout ]</a>";
                             }
-                            ?>
+                            ?>   
                         </div>
                     </div>
                 </nav>

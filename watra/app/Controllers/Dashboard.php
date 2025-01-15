@@ -7,9 +7,9 @@ class Dashboard extends BaseController
     public function index()
     {
         if (session()->get('username') == '') {
-            session()->setFlashdata('gagal', 'Anda belum login');
-            return redirect()->to(base_url('login'));
-        }
+             session()->setFlashdata('gagal', 'Anda belum login');
+             return redirect()->to(base_url('login'));
+        }            
         echo view('part_adm/header');
         echo view('part_adm/top_menu');
         echo view('part_adm/side_menu');
