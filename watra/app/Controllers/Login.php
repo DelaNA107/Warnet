@@ -26,7 +26,7 @@ class Login extends BaseController
             if($cek['hak_akses']=="admin")
                 return redirect()->to(base_url('/dashboard'));
             else
-                return redirect()->to(base_url('/beranda'));
+                return redirect()->to(base_url('/'));
           } else {
              session()->setFlashdata('gagal', 'Username / Password salah');
              return redirect()->to(base_url('login'));
@@ -36,6 +36,6 @@ class Login extends BaseController
     public function logout()
     {
       session()->destroy();
-      return redirect()->to(base_url('/beranda'));
+      return redirect()->to(base_url('/'));
     }
 }
