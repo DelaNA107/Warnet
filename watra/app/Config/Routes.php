@@ -2,9 +2,14 @@
 
 use CodeIgniter\Router\RouteCollection;
 
-/**
- * @var RouteCollection $routes
+/*
+ * --------------------------------------------------------------------
+ * Route Definitions
+ * --------------------------------------------------------------------
  */
+
+// We get a performance increase by specifying the default
+// route since we don't have to scan directories.
 $routes->get('/', 'Beranda::index');
 $routes->get('/aboutme', 'Aboutme::index');
 $routes->get('/education', 'Education::index');
@@ -29,3 +34,7 @@ $routes->add('/kategoribuku/(:segment)/view', 'KategoriBuku::view/$1');
 $routes->add('/kategoribuku/(:segment)/detail', 'KategoriBuku::detail/$1');
 $routes->get('/cart', 'Cart::index');
 $routes->add('/cartAdd', 'Cart::tambahCart');
+$routes->get('/cart/(:segment)/delete', 'Cart::delete/$1');
+$routes->add('/checkout', 'Cart::checkout');
+$routes->add('/cart/(:segment)/finishTrans', 'Cart::finishTrans/$1');
+

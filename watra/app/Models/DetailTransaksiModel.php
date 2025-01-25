@@ -35,4 +35,18 @@ class DetailTransaksiModel extends Model
     {
         return $this->where(array('id_transaksi' => $idTransaksi))->countAllResults();
     }
+    public function getProdukTerlaris()
+    {
+        $builder = $this->db->table('tbl_detail_transaksi');
+        $builder->select('tbl_detail_transaksi.*, SUM(tbl_detail_transaksi.jumlah) as total, tbl_item.kode_barang, tbl_barang.nama_barang, tbl_barang.gambar');
+        $builder->join('tbl_item', 'tbl_detail_transaksi.id_item = tbl_item.id_item');
+        $builder->join('tbl_barang', 'tbl_item.kode_barang = tbl_barang.kode_barang');
+        $builder->groupBy('tbl_item.kode_barang');
+        $builder->orderBy('total', 'DESC');
+        $builder->limit(4);
+
+        $query = $builder->get();
+
+        return $query->getResult();
+    }
 }

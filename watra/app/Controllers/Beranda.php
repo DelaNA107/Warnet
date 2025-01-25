@@ -13,6 +13,7 @@ class Beranda extends BaseController
         $carousel = new CarouselModel();
         $transaksi = new TransaksiModel();
         $detail = new DetailTransaksiModel();
+        $data['brg'] = $detail->getProdukTerlaris();
         $data['kat'] = $kategori->findAll();
         $data['crs'] = $carousel->findAll();
         $data['statushalaman']="beranda";

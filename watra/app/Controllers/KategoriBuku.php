@@ -77,3 +77,4 @@ class KategoriBuku extends BaseController
         echo view('part/footer');
     }
 }
+
